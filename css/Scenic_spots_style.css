@@ -1,0 +1,615 @@
+@import url("./reset.css");
+
+body {
+  font-family: "Noto Sans TC", "Hammersmith One", sans-serif;
+  font-size: 16px;
+  margin: 0;
+  padding: 0;
+  max-width: 1440px;
+  margin: 0 auto;
+  background-color: #eaece5;
+}
+
+a {
+  text-decoration: none;
+}
+
+/* 通用設定 */
+
+.primary01 {
+  color: #44513c;
+}
+.primary02 {
+  color: #5d4f44;
+}
+.dp-flex {
+  display: flex;
+}
+.jc-sb {
+  justify-content: space-between;
+}
+
+h1 {
+  color: white;
+  font-size: 64px;
+  font-weight: 900;
+}
+
+h2 {
+  font-size: 36px;
+  color: black;
+  font-weight: bold;
+  text-align: center;
+}
+
+h3 {
+  color: black;
+  font-size: 24px;
+  font-weight: 700;
+  text-align: center;
+}
+
+h4 {
+  color: black;
+  font-size: 20px;
+  font-weight: 700;
+  text-align: center;
+  margin-bottom: 16px;
+}
+
+.fz-6 {
+  font-size: 24px;
+}
+
+/* 容器 */
+.container {
+  max-width: 1440px;
+  margin: 0 auto;
+  background-color: white;
+}
+
+.gradient-wrapper {
+  background: linear-gradient(to bottom, #f8faf8, #f1f6ed);
+}
+
+.wrapper {
+  width: 1200px;
+  margin: 0 auto;
+}
+
+.gradient-wrapper-header {
+  /* 作為遮擋gradient-wrapper的部分，保持白色底色用 */
+  background-color: white;
+  width: 100%;
+}
+
+/* header */
+header {
+  align-items: center;
+  padding-top: 12px;
+  padding-bottom: 12px;
+}
+
+.logo a {
+  display: block;
+  transition: transform 0.3s ease;
+}
+
+.logo a:hover {
+  transform: scale(1.15);
+}
+
+.logo a:hover img {
+  filter: brightness(1.1);
+}
+
+.logo img {
+  display: block;
+}
+
+.nav-menu {
+  gap: 36px;
+  font-size: 20px;
+  font-weight: 700;
+}
+
+.nav-menu li {
+  border-radius: 4px;
+  border: 2px solid #c0d0b5;
+}
+
+.nav-menu a {
+  color: #44513c;
+  background-color: white;
+  border: #ffffff;
+  border-radius: 4px;
+  box-sizing: border-box;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 16px 28px;
+}
+
+.nav-menu a:hover {
+  color: white;
+  background-color: #44513c;
+}
+
+.user_actions {
+  display: flex;
+  gap: 12px;
+}
+
+.user_actions img {
+  display: block;
+}
+
+.user_actions li a {
+  display: block;
+  transition: transform 0.3s ease;
+}
+.user_actions li a:hover {
+  transform: scale(1.15);
+}
+
+/* hero-banner */
+.hero-banner {
+  width: 100%;
+  max-width: 1440px;
+  margin: 0 auto;
+  position: relative;
+}
+
+.carousel-container {
+  width: 100%;
+  position: relative;
+  overflow: hidden;
+  /* 使用padding-top技巧來維持固定的寬高比 */
+  /* 676÷1440×100% = 46.94% */
+  padding-top: 46.94%;
+}
+
+.carousel-slides {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.slide {
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: none;
+}
+
+.slide.active {
+  opacity: 1;
+  display: block;
+}
+
+.slide img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+
+.slide::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.1);
+  z-index: 1;
+}
+
+.hero-banner a {
+  display: block;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 50px;
+  height: 50px;
+  text-decoration: none;
+  color: rgb(255, 255, 255, 0.5);
+  z-index: 2;
+}
+
+.hero-banner a.la {
+  left: 90px;
+}
+.hero-banner a.ra {
+  right: 90px;
+}
+
+.hero-banner a .bi-arrow-left-circle-fill,
+.hero-banner a .bi-arrow-right-circle-fill {
+  font-size: 48px;
+}
+
+.hero-banner a:hover {
+  transform: translateY(-50%) scale(1.1);
+  color: white;
+}
+
+/* 山道景點搜尋區塊 */
+.scenic_spots {
+  padding-top: 90px;
+}
+.search_block {
+  width: 1000px;
+  padding: 36px;
+  margin: 0 auto;
+  flex-direction: column;
+  gap: 24px;
+  box-sizing: border-box;
+  background-color: white;
+  border-radius: 9px;
+  box-shadow: 0 5px 24px rgba(0, 0, 0, 0.08);
+}
+
+.scenic_spots h2 {
+  margin-bottom: 50px;
+}
+
+.search-container {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 10px;
+}
+
+.search-form {
+  display: flex;
+  align-items: center;
+  background-color: white;
+  border: 2px solid #c0d0b5;
+  box-sizing: border-box;
+  border-radius: 3px;
+  width: 98%;
+  max-width: 100%;
+  height: 64px;
+  position: relative;
+}
+
+.search-submit {
+  background: none;
+  border: none;
+  font-size: 24px;
+  padding: 20px 25px;
+  width: 48px;
+  justify-content: center;
+  align-items: center;
+}
+
+.search-submit:hover {
+  color: #5d4f44;
+}
+
+.search-submit i {
+  transition: transform 0.3s;
+}
+
+.search-submit:hover i {
+  transform: scale(1.2);
+}
+
+.search-input {
+  box-sizing: border-box;
+  flex: 1;
+  border: none;
+  outline: none;
+  padding-left: 5px;
+  margin: 0;
+  font-size: 16px;
+  width: 100%;
+  height: 100%;
+  line-height: 64px;
+  vertical-align: middle;
+}
+
+.search-input::placeholder {
+  font-weight: 700;
+  font-size: 20px;
+  color: #7f7f7f;
+}
+
+.search-submit i.bi-search {
+  font-size: 24px;
+}
+
+.filter-title {
+  font-size: 16px;
+  font-weight: 700;
+  color: #44513c;
+  margin-bottom: 10px;
+}
+
+.conditioner {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  gap: 20px;
+  margin-bottom: 10px;
+}
+
+.filter-group {
+  margin-bottom: 5px;
+  flex: 1;
+}
+
+.level,
+.how_days,
+.order,
+.feature_list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.level li,
+.how_days li,
+.order li,
+.feature_list li {
+  padding: 8px 10px;
+  border-radius: 3px;
+  background-color: white;
+  font-size: 16px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  border: 1.5px solid #c0d0b5;
+}
+
+.level li:hover,
+.how_days li:hover,
+.order li:hover,
+.feature_list li:hover {
+  background-color: #d9edcb;
+}
+
+.level li.selected,
+.how_days li.selected,
+.order li.selected,
+.feature_list li.selected {
+  background-color: #000;
+  color: white;
+  border-color: #000;
+}
+
+/* 山道景點搜尋結果/卡片區 */
+.cards_area {
+  width: 1000px;
+  margin: 50px auto;
+  padding: 0 15px;
+  padding-bottom: 300px;
+}
+
+.cards_list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 50px 12px;
+  justify-content: center;
+}
+
+.card {
+  width: 241px;
+  border-radius: 3px;
+  overflow: hidden;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  background-color: white;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
+}
+
+.card-image {
+  position: relative;
+  width: 100%;
+  height: 200px;
+  overflow: hidden;
+}
+
+.card-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+
+.card:hover .card-image img {
+  transform: scale(1.05);
+}
+.card-link {
+  display: block;
+  width: 100%;
+  height: 100%;
+  color: inherit;
+  text-decoration: none;
+  position: relative;
+}
+
+.card-actions {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  display: flex;
+  gap: 12px;
+  z-index: 10;
+}
+
+.action-btn {
+  background: none;
+  border: none;
+  padding: 0;
+  position: relative;
+  z-index: 11; /* 確保按鈕在上方 */
+  transition: transform 0.3s ease;
+}
+
+.action-btn i {
+  font-size: 24px;
+  color: white;
+  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
+}
+
+.action-btn:hover {
+  transform: scale(1.15);
+}
+
+.card-content {
+  padding: 16px;
+}
+
+.tag-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-bottom: 12px;
+}
+
+.tag {
+  padding: 4px 8px;
+  color: white;
+  border-radius: 3px;
+  font-size: 8px;
+  font-weight: 500;
+}
+.tag.btn_1 {
+  background-color: #7b8675;
+}
+
+.tag.btn_2 {
+  background-color: #7f7f7f;
+}
+.tag.btn_3 {
+  background-color: #5d4f44;
+}
+
+.tag.btn_4 {
+  background-color: #44513c;
+}
+
+.card-title {
+  margin: 8px 0;
+  font-size: 18px;
+  font-weight: 700;
+  color: #000;
+  text-align: left;
+}
+
+.card-location {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  color: #666;
+  font-size: 14px;
+  margin-top: 12px;
+}
+
+.card-location i {
+  font-size: 16px;
+}
+
+.feature-tag {
+  padding: 5px 10px;
+  background-color: #44513c;
+  color: white;
+  font-size: 12px;
+  border-radius: 3px;
+}
+
+.feature-tags {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 5px;
+}
+
+/* 換頁按鈕區 */
+.but_wrapper {
+  width: 65%;
+  margin: 50px auto;
+}
+
+.page_btn_list {
+  display: flex;
+  justify-content: center;
+}
+
+.back_btn,
+.forward_btn,
+.unmber_btn li {
+  border: 2px solid #c0d0b5;
+  border-radius: 3px;
+  font-size: 15px;
+}
+
+.back_btn {
+  margin-right: 24px;
+}
+
+.forward_btn {
+  margin-left: 24px;
+}
+
+.back_btn a,
+.forward_btn a,
+.unmber_btn a {
+  display: block;
+  text-decoration: none;
+  color: #44513c;
+  border-radius: 3px;
+  padding: 12px 24px;
+  transition: all 0.3s ease;
+}
+
+.back_btn a:hover,
+.forward_btn a:hover,
+.unmber_btn a:hover {
+  color: white;
+  background-color: #44513c;
+  border: #44513c;
+}
+.unmber_btn {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+/* footer */
+footer {
+  margin: 0 auto;
+  position: relative;
+  margin-top: -378px;
+}
+
+.footer_bg {
+  width: 100%;
+  background-image: url("../img/footer1440.svg");
+  background-repeat: no-repeat;
+  background-position: center bottom;
+  background-size: 1440px auto;
+  padding-top: 300px;
+  min-height: 200px;
+}
+
+.footer_content {
+  align-items: center;
+  padding-top: 25px;
+  text-align: end;
+}
+.footer_content p {
+  color: #ffffff;
+}

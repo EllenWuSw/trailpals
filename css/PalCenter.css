@@ -1,0 +1,393 @@
+@import url("./reset.css");
+
+body {
+  font-family: "Noto Sans TC", "Hammersmith One", sans-serif;
+  font-size: 16px;
+  margin: 0;
+  padding: 0;
+  max-width: 1440px;
+  margin: 0 auto;
+  background-color: #eaece5;
+}
+
+a {
+  text-decoration: none;
+}
+
+/* 通用設定 */
+
+.primary01 {
+  color: #44513c;
+}
+.primary02 {
+  color: #5d4f44;
+}
+.dp-flex {
+  display: flex;
+}
+.jc-sb {
+  justify-content: space-between;
+}
+
+h1 {
+  color: white;
+  font-size: 64px;
+  font-weight: 900;
+}
+
+h2 {
+  font-size: 36px;
+  color: black;
+  font-weight: bold;
+  text-align: center;
+}
+
+h3 {
+  color: black;
+  font-size: 24px;
+  font-weight: 700;
+  text-align: center;
+}
+
+h4 {
+  color: black;
+  font-size: 20px;
+  font-weight: 700;
+  text-align: center;
+  margin-bottom: 16px;
+}
+
+.fz-6 {
+  font-size: 24px;
+}
+
+/* 容器 */
+.container {
+  max-width: 1440px;
+  margin: 0 auto;
+  background-color: white;
+}
+
+.gradient-wrapper {
+  background: linear-gradient(to bottom, #f8faf8, #f1f6ed);
+}
+
+.wrapper {
+  width: 1200px;
+  margin: 0 auto;
+}
+
+.gradient-wrapper-header {
+  /* 作為遮擋gradient-wrapper的部分，保持白色底色用 */
+  background-color: white;
+  width: 100%;
+}
+
+/* header */
+header {
+  align-items: center;
+  padding-top: 12px;
+  padding-bottom: 12px;
+}
+
+.logo a {
+  display: block;
+  transition: transform 0.3s ease;
+}
+
+.logo a:hover {
+  transform: scale(1.15);
+}
+
+.logo a:hover img {
+  filter: brightness(1.1);
+}
+
+.logo img {
+  display: block;
+}
+
+.nav-menu {
+  gap: 36px;
+  font-size: 20px;
+  font-weight: 700;
+}
+
+.nav-menu li {
+  border-radius: 4px;
+  border: 2px solid #c0d0b5;
+}
+
+.nav-menu a {
+  color: #44513c;
+  background-color: white;
+  border: #ffffff;
+  border-radius: 4px;
+  box-sizing: border-box;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 16px 28px;
+}
+
+.nav-menu a:hover {
+  color: white;
+  background-color: #44513c;
+}
+
+.user_actions {
+  display: flex;
+  gap: 12px;
+}
+
+.user_actions img {
+  display: block;
+}
+
+.user_actions li a {
+  display: block;
+  transition: transform 0.3s ease;
+}
+.user_actions li a:hover {
+  transform: scale(1.15);
+}
+/* 山友中心 */
+
+/* 左側會員導覽 */
+
+/* 右側會員基本設定 */
+.memberManagementArea {
+  display: flex;
+  gap: 36px;
+  background-color: #f9faf8;
+  border-radius: 9px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
+  overflow: hidden;
+}
+
+.user_nav {
+  width: 25%;
+  background-color: #e8efe0;
+  padding: 30px 0;
+}
+
+.user_content {
+  width: 75%;
+  padding: 30px;
+}
+
+.user_content h3 {
+  text-align: left;
+  margin-bottom: 30px;
+  color: #44513c;
+}
+
+/* 個人資訊區塊 */
+.profile-section {
+  display: flex;
+  align-items: center;
+  margin-bottom: 30px;
+  gap: 20px;
+}
+
+.profile-image {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  overflow: hidden;
+}
+
+.profile-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.edit-photo-btn {
+  background-color: #5d4f44;
+  color: white;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 14px;
+  transition: background-color 0.3s;
+}
+
+.edit-photo-btn:hover {
+  background-color: #44513c;
+}
+
+/* 資訊網格 */
+.info-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+  background-color: #f1f6ed;
+  padding: 20px;
+  border-radius: 8px;
+  margin-bottom: 30px;
+}
+
+.info-item {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.info-label {
+  font-size: 14px;
+  font-weight: 600;
+  color: #5d4f44;
+}
+
+.info-value {
+  font-size: 16px;
+}
+
+.gender-options {
+  display: flex;
+  gap: 20px;
+}
+
+/* 表單區域 */
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  max-width: 600px;
+}
+
+.form-group {
+  margin-bottom: 15px;
+}
+
+.form-label {
+  display: block;
+  font-weight: 600;
+  margin-bottom: 8px;
+  color: #5d4f44;
+}
+
+.form-input {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  font-size: 16px;
+}
+
+.password-input-container {
+  position: relative;
+}
+
+.password-toggle {
+  position: absolute;
+  right: 15px;
+  top: 50%;
+  transform: translateY(-50%);
+  cursor: pointer;
+  color: #5d4f44;
+}
+
+textarea {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  resize: vertical;
+  min-height: 100px;
+  font-family: inherit;
+  font-size: 16px;
+}
+
+/* 按鈕樣式 */
+.btn {
+  padding: 12px 20px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-weight: 500;
+  transition: background-color 0.3s, transform 0.2s;
+}
+
+.btn:hover {
+  transform: translateY(-2px);
+}
+
+.btn-primary {
+  background-color: #44513c;
+  color: white;
+}
+
+.btn-primary:hover {
+  background-color: #374833;
+}
+
+.btn-secondary {
+  background-color: #e0e0e0;
+  color: #333;
+}
+
+.btn-secondary:hover {
+  background-color: #d0d0d0;
+}
+
+.btn-group {
+  display: flex;
+  gap: 15px;
+  margin-top: 10px;
+}
+
+/* footer */
+footer {
+  margin: 0 auto;
+  position: relative;
+  margin-top: -378px;
+}
+
+.footer_bg {
+  width: 100%;
+  background-image: url("../img/footer1440.svg");
+  background-repeat: no-repeat;
+  background-position: center bottom;
+  background-size: 1440px auto;
+  padding-top: 300px;
+  min-height: 200px;
+}
+
+.footer_content {
+  align-items: center;
+  padding-top: 25px;
+  text-align: end;
+}
+.footer_content p {
+  color: #ffffff;
+}
+
+/* footer */
+footer {
+  margin: 0 auto;
+  position: relative;
+  margin-top: -378px;
+}
+
+.footer_bg {
+  width: 100%;
+  background-image: url("../img/footer1440.svg");
+  background-repeat: no-repeat;
+  background-position: center bottom;
+  background-size: 1440px auto;
+  padding-top: 300px;
+  min-height: 200px;
+}
+
+.footer_content {
+  align-items: center;
+  padding-top: 25px;
+  text-align: end;
+}
+.footer_content p {
+  color: #ffffff;
+}
