@@ -153,8 +153,56 @@ header {
   transform: scale(1.15);
 }
 /* 山友中心 */
+.palsCenter {
+  padding-bottom: 300px;
+}
+.wrapper h2 {
+  margin-top: 90px;
+  margin-bottom: 50px;
+}
 
 /* 左側會員導覽 */
+.user_nav {
+  width: 25%;
+  background-color: white;
+  border-radius: 9px;
+  padding: 48px 50px;
+  /* 需要再調整  */
+}
+.head-area {
+  text-align: center;
+}
+.head-area p {
+  margin-top: 18px;
+  margin-bottom: 48px;
+}
+.nickName {
+  font-size: 24px;
+  font-weight: 700;
+  font-family: "Hammersmith One", sans-serif;
+}
+.quck_link {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  gap: 16px;
+}
+.user_link_btn {
+}
+.user_link_btn a {
+  display: block;
+  text-decoration: none;
+  color: #44513c;
+  font-size: 20px;
+  font-weight: 800;
+  padding: 16px 48px;
+  transition: all 0.3s;
+}
+.user_link_btn a:hover {
+  color: white;
+  background-color: #44513c;
+  border-radius: 3px;
+}
 
 /* 右側會員基本設定 */
 .memberManagementArea {
@@ -166,21 +214,17 @@ header {
   overflow: hidden;
 }
 
-.user_nav {
-  width: 25%;
-  background-color: #e8efe0;
-  padding: 30px 0;
-}
-
 .user_content {
   width: 75%;
-  padding: 30px;
+  padding: 48px 60px;
+  border-radius: 9px;
+  background-color: white;
 }
 
 .user_content h3 {
   text-align: left;
-  margin-bottom: 30px;
-  color: #44513c;
+  margin-bottom: 48px;
+  color: black;
 }
 
 /* 個人資訊區塊 */
@@ -210,8 +254,7 @@ header {
   border: none;
   padding: 8px 16px;
   border-radius: 4px;
-  cursor: pointer;
-  font-size: 14px;
+  font-size: 16px;
   transition: background-color 0.3s;
 }
 
@@ -219,14 +262,13 @@ header {
   background-color: #44513c;
 }
 
-/* 資訊網格 */
-.info-grid {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 20px;
+/* 資訊專區 */
+.info-box {
+  display: flex;
+  flex-wrap: wrap;
   background-color: #f1f6ed;
   padding: 20px;
-  border-radius: 8px;
+  border-radius: 9px;
   margin-bottom: 30px;
 }
 
@@ -234,16 +276,29 @@ header {
   display: flex;
   flex-direction: column;
   gap: 8px;
+  width: calc(50% - 10px);
+  margin-bottom: 20px;
+}
+
+.info-item:nth-child(odd) {
+  margin-right: 20px;
+}
+
+.info-item:nth-last-child(1),
+.info-item:nth-last-child(2) {
+  margin-bottom: 0;
 }
 
 .info-label {
-  font-size: 14px;
+  font-size: 16px;
   font-weight: 600;
-  color: #5d4f44;
+  color: black;
+  font-weight: 700;
 }
 
 .info-value {
   font-size: 16px;
+  color: #7f7f7f;
 }
 
 .gender-options {
@@ -256,7 +311,7 @@ form {
   display: flex;
   flex-direction: column;
   gap: 20px;
-  max-width: 600px;
+  max-width: 97%;
 }
 
 .form-group {
@@ -267,7 +322,7 @@ form {
   display: block;
   font-weight: 600;
   margin-bottom: 8px;
-  color: #5d4f44;
+  color: black;
 }
 
 .form-input {
@@ -287,8 +342,6 @@ form {
   right: 15px;
   top: 50%;
   transform: translateY(-50%);
-  cursor: pointer;
-  color: #5d4f44;
 }
 
 textarea {
@@ -300,6 +353,8 @@ textarea {
   min-height: 100px;
   font-family: inherit;
   font-size: 16px;
+
+  /* ??????? */
 }
 
 /* 按鈕樣式 */
@@ -307,7 +362,6 @@ textarea {
   padding: 12px 20px;
   border: none;
   border-radius: 4px;
-  cursor: pointer;
   font-weight: 500;
   transition: background-color 0.3s, transform 0.2s;
 }
@@ -316,13 +370,13 @@ textarea {
   transform: translateY(-2px);
 }
 
-.btn-primary {
-  background-color: #44513c;
+.btn-primary02 {
+  background-color: #5d4f44;
   color: white;
 }
 
-.btn-primary:hover {
-  background-color: #374833;
+.btn-primary02:hover {
+  background-color: #44513c;
 }
 
 .btn-secondary {
