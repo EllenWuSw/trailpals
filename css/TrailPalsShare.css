@@ -82,6 +82,17 @@ h4 {
   background-color: white;
   width: 100%;
 }
+.top-btn {
+  z-index: 100;
+  position: fixed;
+  right: 5%;
+  bottom: 5%;
+  width: 100px;
+  height: 100px;
+}
+svg.top-btn:hover rect {
+  fill: #5d4f44;
+}
 
 /* header */
 header {

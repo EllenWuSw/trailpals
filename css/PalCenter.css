@@ -186,6 +186,7 @@ header {
   flex-direction: column;
   text-align: center;
   gap: 16px;
+  height: 87%;
 }
 
 .user_link_btn a {
@@ -201,6 +202,24 @@ header {
   color: white;
   background-color: #44513c;
   border-radius: 3px;
+}
+
+.user_link_btn_logout {
+  margin-top: auto;
+}
+.user_link_btn_logout a {
+  color: white;
+  background-color: #5d4f44;
+  display: block;
+  text-decoration: none;
+  border-radius: 3px;
+  font-size: 20px;
+  font-weight: 800;
+  padding: 16px 48px;
+  transition: all 0.3s;
+}
+.user_link_btn_logout a:hover {
+  background-color: #44513c;
 }
 
 /* 右側會員基本設定 */

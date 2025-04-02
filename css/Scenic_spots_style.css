@@ -61,7 +61,7 @@ h4 {
   font-size: 24px;
 }
 
-.top-btn {
+/* .top-btn {
   display: block;
   z-index: 100;
   position: fixed;
@@ -69,6 +69,18 @@ h4 {
   bottom: 5%;
   width: 100px;
   height: 100px;
+} */
+
+.top-btn {
+  z-index: 100;
+  position: fixed;
+  right: 5%;
+  bottom: 5%;
+  width: 100px;
+  height: 100px;
+}
+svg.top-btn:hover rect {
+  fill: #5d4f44;
 }
 
 /* 容器 */
