@@ -72,6 +72,18 @@ h4 {
   margin: 0 auto;
 }
 
+.top-btn {
+  z-index: 100;
+  position: fixed;
+  right: 5%;
+  bottom: 5%;
+  width: 100px;
+  height: 100px;
+}
+svg.top-btn:hover rect {
+  fill: red;
+}
+
 /* header */
 
 header {
