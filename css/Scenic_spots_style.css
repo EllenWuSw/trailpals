@@ -419,7 +419,7 @@ header {
   display: flex;
   flex-wrap: wrap;
   gap: 50px 12px;
-  justify-content: center;
+  justify-content: flex-start;
 }
 
 .card {
@@ -505,7 +505,7 @@ header {
   padding: 4px 8px;
   color: white;
   border-radius: 3px;
-  font-size: 8px;
+  font-size: 12px;
   font-weight: 500;
 }
 .tag.btn_1 {
