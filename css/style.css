@@ -57,11 +57,40 @@ h4 {
   font-size: 20px;
   font-weight: 700;
   text-align: center;
-  margin-bottom: 16px;
 }
 
 .fz-6 {
   font-size: 24px;
+}
+/* 垂直間距 */
+.section-padding {
+  padding-top: 90px;
+  padding-bottom: 90px;
+}
+
+/* 水平間距 */
+.mb-50 {
+  margin-bottom: 50px;
+}
+
+.mb-30 {
+  margin-bottom: 30px;
+}
+
+.mb-16 {
+  margin-bottom: 16px;
+}
+
+.mb-12 {
+  margin-bottom: 12px;
+}
+
+.mt-50 {
+  margin-top: 50px;
+}
+
+.mt-30 {
+  margin-top: 30px;
 }
 
 /* 容器 */
@@ -75,6 +104,7 @@ h4 {
   margin: 0 auto;
 }
 
+/* 回到頂部按鈕 */
 .top-btn {
   z-index: 100;
   position: fixed;
@@ -285,8 +315,6 @@ header {
 }
 /* 揪團列表區塊 */
 .groupUp-cardsList {
-  padding-top: 90px;
-  padding-bottom: 90px;
   text-align: center;
 }
 
@@ -294,8 +322,6 @@ header {
   flex-wrap: wrap;
   gap: 50px 20px;
   justify-content: center;
-  margin-top: 50px;
-  margin-bottom: 50px;
 }
 
 .event-card {
@@ -347,13 +373,12 @@ header {
 
 .tags {
   gap: 8px;
-  margin-bottom: 12px;
 }
 
 .tag {
   background-color: #44513c;
   color: white;
-  padding: 8px 16px;
+  padding: 4px 8px;
   border-radius: 4px;
   font-size: 12px;
 }
@@ -361,7 +386,6 @@ header {
 .event-title {
   font-size: 18px;
   font-weight: bold;
-  margin-bottom: 12px;
   text-align: start;
 }
 
@@ -421,8 +445,6 @@ header {
 .painPoint_block {
   background-color: #f1f6ed;
   margin: 0 auto;
-  padding-top: 90px;
-  padding-bottom: 90px;
 }
 .pain_questions {
   margin-top: 12px;
@@ -459,16 +481,11 @@ header {
   margin-bottom: 90px;
 }
 
-.site_features h2 {
-  margin-bottom: 50px;
-}
-
 .site_features ul.dp-flex {
   justify-content: center;
   flex-wrap: wrap;
   gap: 16px;
   width: 100%;
-  margin-bottom: 50px;
 }
 
 .site_features li {
@@ -484,7 +501,6 @@ header {
 
 .site_features img {
   display: block;
-  margin-bottom: 16px;
 }
 
 /* 網站特點 */
@@ -499,7 +515,6 @@ header {
   background: linear-gradient(to bottom, #f8faf8, #f1f6ed);
   border: 1px solid #dedede;
   border-radius: 3px;
-  margin-top: 30px;
 }
 
 .call_action_block p {
@@ -548,8 +563,6 @@ header {
   background-color: #f7f8f4;
   overflow: hidden;
   max-width: 1440px;
-  padding-top: 90px;
-  padding-bottom: 90px;
 }
 
 .mountain-trails-container::after {
@@ -598,7 +611,6 @@ header {
 
 .trails-subtitle {
   font-size: 16px;
-  margin-bottom: 30px;
   line-height: 1.5;
   text-align: center;
 }
@@ -606,7 +618,6 @@ header {
 .trails-controls {
   display: flex;
   align-items: center;
-  margin-bottom: 30px;
 }
 
 .nav-button {
@@ -665,7 +676,6 @@ header {
   position: relative;
   overflow: visible;
   margin-left: -30px;
-  margin-top: 30px;
 }
 
 .carousel-container {
@@ -755,7 +765,7 @@ header {
 
 .trail-card .tag {
   display: inline-block;
-  padding: 8px 10px;
+  padding: 4px 8px;
   background-color: #4a5c47;
   color: white;
   font-size: 12px;
@@ -766,7 +776,6 @@ header {
   font-size: 20px;
   font-weight: bold;
   margin-top: 20px;
-  margin-bottom: 12px;
   color: black;
   text-align: left;
 }
@@ -789,14 +798,11 @@ header {
 }
 
 .share-block {
-  padding-top: 90px;
-  padding-bottom: 90px;
   position: relative;
   width: 100%;
 }
 
 .share-block h2 {
-  margin-bottom: 50px;
   font-size: 36px;
   font-weight: bold;
 }
@@ -839,7 +845,6 @@ header {
   height: 150px;
   overflow: hidden;
   border-radius: 3px;
-  margin-bottom: 12px;
 }
 
 .card-image img {
