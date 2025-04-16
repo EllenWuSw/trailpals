@@ -787,7 +787,7 @@ footer {
   .footer_bg {
     width: 100%;
     background-image: url("../img/footer_m.svg");
-    background-size: 1080px auto;
+    background-size: 820px auto;
     padding-top: 200px;
     min-height: 200px;
   }
