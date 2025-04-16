@@ -100,8 +100,11 @@ h4 {
   background-color: white;
 }
 .wrapper {
-  width: 1200px;
+  max-width: 1200px;
   margin: 0 auto;
+
+  /* 以下防止內容貼齊邊緣 */
+  padding: 0 12px;
 }
 
 /* 回到頂部按鈕 */
