@@ -717,22 +717,26 @@ footer {
   .user_actions img {
     width: 80%;
   }
-}
 
-.hamburger-menu {
-  display: none;
-  position: relative;
-  z-index: 100;
-  cursor: pointer;
-}
+  /* page btn area */
+  .btn_wrapper {
+    width: 45%;
+    margin: 40px auto;
+  }
 
-.hamburger-menu .bar {
-  width: 30px;
-  height: 3px;
-  background-color: #44513c;
-  margin: 6px 0;
-  border-radius: 2px;
-  transition: 0.4s;
+  .back_btn {
+    margin-right: 20px;
+  }
+
+  .forward_btn {
+    margin-left: 20px;
+  }
+
+  .back_btn a,
+  .forward_btn a,
+  .unmber_btn a {
+    padding: 12px 20px;
+  }
 }
 
 @media screen and (max-width: 820px) {
@@ -875,6 +879,30 @@ footer {
     gap: 2rem 1rem;
   }
 
+  /* page-btn area */
+  .btn_wrapper {
+    width: 30%;
+    margin: 40px auto;
+  }
+
+  .back_btn {
+    margin-right: 16px;
+  }
+
+  .forward_btn {
+    margin-left: 16px;
+  }
+
+  .back_btn a,
+  .forward_btn a,
+  .unmber_btn a {
+    padding: 8px 16px;
+  }
+
+  .unmber_btn {
+    gap: 4px;
+  }
+
   /* footer */
   .footer_bg {
     width: 100%;
@@ -958,7 +986,7 @@ footer {
   }
 
   .card-image {
-    height: 150px; /* 增加圖片高度，讓卡片更大更清晰 */
+    height: 150px;
   }
 
   .tag-container {
@@ -967,21 +995,26 @@ footer {
 
   .tag {
     padding: 4px 8px;
-    font-size: 12px; /* 稍微增加標籤字體大小 */
+    font-size: 12px;
   }
 
   .card-title {
-    font-size: 16px; /* 增加標題字體大小 */
+    font-size: 16px;
     margin: 10px 0;
   }
 
   .card-location {
-    font-size: 14px; /* 增加位置資訊字體大小 */
+    font-size: 14px;
     margin-top: 10px;
   }
 
   .card-location i {
     font-size: 16px;
+  }
+
+  /* page btn area */
+  .unmber_btn {
+    display: none;
   }
 
   /* footer */

@@ -175,7 +175,24 @@ header {
   transform: scale(1.15);
 }
 
-/* hero-banner */
+/* 漢堡選單基本樣式 */
+.hamburger-menu {
+  display: none;
+  cursor: pointer;
+  position: relative;
+  z-index: 100;
+  padding: 10px;
+}
+
+.bar {
+  width: 30px;
+  height: 3px;
+  background-color: #44513c;
+  margin: 6px 0;
+  border-radius: 2px;
+  transition: 0.4s;
+}
+
 /* hero-banner */
 .hero-banner {
   width: 100%;
@@ -551,7 +568,7 @@ header {
 }
 
 /* 換頁按鈕區 */
-.but_wrapper {
+.btn_wrapper {
   width: 65%;
   margin: 50px auto;
 }
@@ -658,22 +675,26 @@ footer {
   .user_actions img {
     width: 80%;
   }
-}
 
-.hamburger-menu {
-  display: none;
-  position: relative;
-  z-index: 100;
-  cursor: pointer;
-}
+  /* page btn area */
+  .btn_wrapper {
+    width: 45%;
+    margin: 40px auto;
+  }
 
-.hamburger-menu .bar {
-  width: 30px;
-  height: 3px;
-  background-color: #44513c;
-  margin: 6px 0;
-  border-radius: 2px;
-  transition: 0.4s;
+  .back_btn {
+    margin-right: 20px;
+  }
+
+  .forward_btn {
+    margin-left: 20px;
+  }
+
+  .back_btn a,
+  .forward_btn a,
+  .unmber_btn a {
+    padding: 12px 20px;
+  }
 }
 
 @media screen and (max-width: 820px) {
@@ -779,7 +800,6 @@ footer {
   }
 
   /* search block */
-
   .search_block {
     padding: 1rem;
   }
@@ -810,6 +830,30 @@ footer {
   .conditioner,
   .feature_block {
     display: none;
+  }
+
+  /* page-btn area */
+  .btn_wrapper {
+    width: 30%;
+    margin: 40px auto;
+  }
+
+  .back_btn {
+    margin-right: 16px;
+  }
+
+  .forward_btn {
+    margin-left: 16px;
+  }
+
+  .back_btn a,
+  .forward_btn a,
+  .unmber_btn a {
+    padding: 8px 16px;
+  }
+
+  .unmber_btn {
+    gap: 4px;
   }
 
   /* footer */
@@ -886,6 +930,11 @@ footer {
 
   .search-input::placeholder {
     font-size: 8px;
+  }
+
+  /* page btn area */
+  .unmber_btn {
+    display: none;
   }
 }
 
