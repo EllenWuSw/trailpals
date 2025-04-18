@@ -276,11 +276,11 @@ header {
   padding-top: 90px;
 }
 .search_block {
-  width: 1000px;
-  padding: 36px;
+  max-width: 1000px;
+  padding: 2.25rem;
   margin: 0 auto;
   flex-direction: column;
-  gap: 24px;
+  gap: 1.5rem;
   box-sizing: border-box;
   background-color: white;
   border-radius: 9px;
@@ -370,6 +370,20 @@ header {
 
 .search-submit i.bi-search {
   font-size: 24px;
+}
+
+.filter-toggle-btn {
+  display: none; /* 桌面版默認隱藏 */
+  background: none; /* 移除背景色 */
+  color: #44513c; /* 使用主色但僅為圖標著色 */
+  border: none;
+  padding: 0.5rem;
+  margin-left: 1rem;
+  cursor: pointer;
+}
+
+.filter-toggle-btn i {
+  font-size: 2rem; /* 放大圖標 */
 }
 
 .filter-title {
@@ -749,6 +763,23 @@ footer {
 
   header.menu-active .bar3 {
     transform: rotate(45deg) translate(-9px, -3px);
+  }
+
+  /* search block */
+  .filter-toggle-btn {
+    display: flex; /* 在平板尺寸下顯示 */
+  }
+
+  /* 調整搜尋容器的排列 */
+  .search-container {
+    display: flex;
+    align-items: center;
+  }
+
+  /* 隱藏篩選條件 */
+  .conditioner,
+  .feature_block {
+    display: none; /* 初始狀態下隱藏 */
   }
 
   /* footer */
