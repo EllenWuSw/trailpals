@@ -27,7 +27,7 @@
         $(".filter-toggle-btn").click(function () {
           $(".conditioner, .feature_block").toggle("slow");
 
-          if ($(".conditioner").is(":visible")) {
+          if ($(this).find("i").hasClass("bi-filter")) {
             $(this).html('<i class="bi bi-chevron-up"></i>');
           } else {
             $(this).html('<i class="bi bi-filter"></i>');
@@ -37,15 +37,17 @@
         $(window).resize(function () {
           if ($(window).width() > 820) {
             $(".conditioner, .feature_block").show();
+            $(".filter-toggle-btn").html('<i class="bi bi-chevron-up"></i>');
           } else {
-            if (!$(".filter-toggle-btn").find(".bi-chevron-up").length) {
-              $(".conditioner, .feature_block").hide();
+            if (!$(".conditioner").is(":visible")) {
+              $(".filter-toggle-btn").html('<i class="bi bi-filter"></i>');
             }
           }
         });
 
         if ($(window).width() <= 820) {
           $(".conditioner, .feature_block").hide();
+          $(".filter-toggle-btn").html('<i class="bi bi-filter"></i>');
         }
       });
     </script>
@@ -179,7 +181,7 @@
                   </button>
                   <input
                     type="text"
-                    placeholder="「關鍵字」搜尋，與下列篩選器擇一使用，均按右側搜尋鈕"
+                    placeholder="「關鍵字」搜尋，與篩選器擇一使用"
                     class="search-input"
                   />
                   <button type="button" class="search-btn">搜尋</button>

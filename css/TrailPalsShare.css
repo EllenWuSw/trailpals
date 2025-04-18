@@ -373,9 +373,9 @@ header {
 }
 
 .filter-toggle-btn {
-  display: none; /* 桌面版默認隱藏 */
-  background: none; /* 移除背景色 */
-  color: #44513c; /* 使用主色但僅為圖標著色 */
+  display: none;
+  background: none;
+  color: #44513c;
   border: none;
   padding: 0.5rem;
   margin-left: 1rem;
@@ -383,7 +383,7 @@ header {
 }
 
 .filter-toggle-btn i {
-  font-size: 2rem; /* 放大圖標 */
+  font-size: 2rem;
 }
 
 .filter-title {
@@ -765,21 +765,51 @@ footer {
     transform: rotate(45deg) translate(-9px, -3px);
   }
 
-  /* search block */
-  .filter-toggle-btn {
-    display: flex; /* 在平板尺寸下顯示 */
+  /* h2 area*/
+  .scenic_spots {
+    padding-top: 60px;
   }
 
-  /* 調整搜尋容器的排列 */
+  .scenic_spots h2 {
+    margin-bottom: 30px;
+  }
+
+  h2 {
+    font-size: 28px;
+  }
+
+  /* search block */
+
+  .search_block {
+    padding: 1rem;
+  }
+  .search-form {
+    width: 80%;
+    max-width: 80%;
+    height: 3rem;
+  }
+
+  .search-input::placeholder {
+    font-size: 12px;
+  }
+
+  .search-btn {
+    min-width: 60px;
+    font-size: 16px;
+  }
+
+  .filter-toggle-btn {
+    display: flex;
+  }
+
   .search-container {
     display: flex;
     align-items: center;
   }
 
-  /* 隱藏篩選條件 */
   .conditioner,
   .feature_block {
-    display: none; /* 初始狀態下隱藏 */
+    display: none;
   }
 
   /* footer */
@@ -801,6 +831,7 @@ footer {
 }
 
 @media screen and (max-width: 440px) {
+  /* header */
   header {
     padding-top: 4px;
     padding-bottom: 4px;
@@ -831,6 +862,30 @@ footer {
 
   header.menu-active .bar3 {
     transform: rotate(45deg) translate(-7px, -3px);
+  }
+
+  /* h2 area*/
+  .scenic_spots {
+    padding-top: 24px;
+  }
+
+  .scenic_spots h2 {
+    margin-bottom: 10px;
+  }
+
+  h2 {
+    font-size: 24px;
+  }
+
+  /* search block */
+  .search-btn {
+    min-width: 50px;
+    font-size: 16px;
+    font-weight: normal;
+  }
+
+  .search-input::placeholder {
+    font-size: 8px;
   }
 }
 

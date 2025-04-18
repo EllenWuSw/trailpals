@@ -383,9 +383,9 @@ header {
 }
 
 .filter-toggle-btn {
-  display: none; /* 桌面版默認隱藏 */
-  background: none; /* 移除背景色 */
-  color: #44513c; /* 使用主色但僅為圖標著色 */
+  display: none;
+  background: none;
+  color: #44513c;
   border: none;
   padding: 0.5rem;
   margin-left: 1rem;
@@ -393,7 +393,7 @@ header {
 }
 
 .filter-toggle-btn i {
-  font-size: 2rem; /* 放大圖標 */
+  font-size: 2rem;
 }
 
 .filter-title {
@@ -456,21 +456,21 @@ header {
 
 /* 山道景點搜尋結果/卡片區 */
 .cards_area {
-  width: 1000px;
-  margin: 50px auto;
-  padding: 0 15px;
-  padding-bottom: 300px;
+  max-width: 1000px;
+  margin: 3rem auto;
+  padding: 0 1rem;
+  padding-bottom: 19rem;
 }
 
 .cards_list {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 50px 12px;
-  justify-content: flex-start;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, 238px);
+  gap: 3rem 1rem;
+  justify-content: center;
 }
 
 .card {
-  width: 241px;
+  width: 238px;
   border-radius: 3px;
   overflow: hidden;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
@@ -823,22 +823,56 @@ footer {
   header.menu-active .bar3 {
     transform: rotate(45deg) translate(-9px, -3px);
   }
-
-  /* search block */
-  .filter-toggle-btn {
-    display: flex; /* 在平板尺寸下顯示 */
+  /* h2 area*/
+  .scenic_spots {
+    padding-top: 60px;
   }
 
-  /* 調整搜尋容器的排列 */
+  .scenic_spots h2 {
+    margin-bottom: 30px;
+  }
+
+  h2 {
+    font-size: 28px;
+  }
+
+  /* search block */
+
+  .search_block {
+    padding: 1rem;
+  }
+  .search-form {
+    width: 80%;
+    max-width: 80%;
+    height: 3rem;
+  }
+
+  .search-input::placeholder {
+    font-size: 12px;
+  }
+
+  .search-btn {
+    min-width: 60px;
+    font-size: 16px;
+  }
+
+  .filter-toggle-btn {
+    display: flex;
+  }
+
   .search-container {
     display: flex;
     align-items: center;
   }
 
-  /* 隱藏篩選條件 */
   .conditioner,
   .feature_block {
-    display: none; /* 初始狀態下隱藏 */
+    display: none;
+  }
+
+  /* 卡片區域 */
+  .cards_list {
+    gap: 2rem 1rem;
   }
 
   /* footer */
@@ -860,6 +894,7 @@ footer {
 }
 
 @media screen and (max-width: 440px) {
+  /* header */
   header {
     padding-top: 4px;
     padding-bottom: 4px;
@@ -891,11 +926,75 @@ footer {
   header.menu-active .bar3 {
     transform: rotate(45deg) translate(-7px, -3px);
   }
+
+  /* h2 area*/
+  .scenic_spots {
+    padding-top: 24px;
+  }
+
+  .scenic_spots h2 {
+    margin-bottom: 10px;
+  }
+
+  h2 {
+    font-size: 24px;
+  }
+
+  /* search block */
+  .search-btn {
+    min-width: 50px;
+    font-size: 16px;
+    font-weight: normal;
+  }
+
+  .search-input::placeholder {
+    font-size: 8px;
+  }
+
+  /* 卡片區域 */
+  .card {
+    width: 100%;
+    max-width: 100%;
+  }
+
+  .card-image {
+    height: 150px; /* 增加圖片高度，讓卡片更大更清晰 */
+  }
+
+  .tag-container {
+    gap: 5px;
+  }
+
+  .tag {
+    padding: 4px 8px;
+    font-size: 12px; /* 稍微增加標籤字體大小 */
+  }
+
+  .card-title {
+    font-size: 16px; /* 增加標題字體大小 */
+    margin: 10px 0;
+  }
+
+  .card-location {
+    font-size: 14px; /* 增加位置資訊字體大小 */
+    margin-top: 10px;
+  }
+
+  .card-location i {
+    font-size: 16px;
+  }
+
+  /* footer */
+  footer {
+    margin-top: -300px;
+  }
 }
 
 @media screen and (max-width: 375px) {
+  /* footer */
   .footer_bg {
     background-image: url("../img/footer_xs.svg");
     background-size: 375px auto;
+    padding-top: 85px;
   }
 }
