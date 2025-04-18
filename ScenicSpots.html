@@ -23,6 +23,78 @@
           $("header").toggleClass("menu-active");
         });
 
+        // 輪播器
+        let slideCount = $(".slide").length;
+        let currentIndex = 0;
+        let slideWidth = $(".carousel-container").width();
+        let timer;
+
+        setupSlider();
+
+        startAutoSlide();
+
+        $(".hero-banner .la").click(function (e) {
+          e.preventDefault();
+          clearInterval(timer);
+
+          currentIndex--;
+          if (currentIndex < 0) {
+            currentIndex = slideCount - 1;
+          }
+
+          slideToPosition();
+          startAutoSlide();
+        });
+
+        $(".hero-banner .ra").click(function (e) {
+          e.preventDefault();
+          clearInterval(timer);
+
+          currentIndex++;
+          if (currentIndex >= slideCount) {
+            currentIndex = 0;
+          }
+
+          slideToPosition();
+          startAutoSlide();
+        });
+
+        $(window).resize(function () {
+          slideWidth = $(".carousel-container").width();
+          setupSlider();
+          slideToPosition(false);
+        });
+
+        function setupSlider() {
+          $(".slide").css("width", slideWidth + "px");
+          $(".carousel-slides").css("width", slideWidth * slideCount + "px");
+        }
+
+        function startAutoSlide() {
+          timer = setInterval(function () {
+            currentIndex++;
+            if (currentIndex >= slideCount) {
+              currentIndex = 0;
+            }
+            slideToPosition();
+          }, 5000);
+        }
+
+        function slideToPosition(animated = true) {
+          let position = -currentIndex * slideWidth;
+
+          if (animated) {
+            $(".carousel-slides").animate(
+              {
+                left: position + "px",
+              },
+              600
+            );
+          } else {
+            $(".carousel-slides").css("left", position + "px");
+          }
+        }
+
         // 搜尋篩選器
         $(".filter-toggle-btn").click(function () {
           $(".conditioner, .feature_block").toggle("slow");
@@ -51,6 +123,7 @@
         }
       });
     </script>
+
     <title>TrailPals 山道景點</title>
   </head>
   <body>
@@ -152,10 +225,13 @@
                 <img src="./img/TrailWay.jpg" alt="山道景點1" />
               </div>
               <div class="slide">
-                <img src="" alt="山道景點2" />
+                <img src="./img/TrailWay2.jpg" alt="山道景點2" />
               </div>
               <div class="slide">
-                <img src="" alt="山道景點3" />
+                <img src="./img/TrailWay3.jpg" alt="山道景點3" />
+              </div>
+              <div class="slide">
+                <img src="./img/TrailWay4.jpg" alt="山道景點4" />
               </div>
             </div>
             <a href="#" class="la"
