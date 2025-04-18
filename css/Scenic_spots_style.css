@@ -717,6 +717,12 @@ footer {
     width: 80%;
   }
 
+  /* 回到頁首按鈕 */
+  .top-btn {
+    width: 80px;
+    height: 80px;
+  }
+
   /* .hero-banner */
   .hero-banner a .bi-arrow-left-circle-fill,
   .hero-banner a .bi-arrow-right-circle-fill {
@@ -831,6 +837,14 @@ footer {
 
   header.menu-active .bar3 {
     transform: rotate(45deg) translate(-9px, -3px);
+  }
+
+  /* 回到頁首按鈕 */
+  .top-btn {
+    width: 60px;
+    height: 60px;
+    right: 5%;
+    bottom: 5%;
   }
 
   /* hero-banner */
@@ -985,6 +999,14 @@ footer {
     transform: rotate(45deg) translate(-7px, -3px);
   }
 
+  /* 回到頁首按鈕 */
+  .top-btn {
+    width: 45px;
+    height: 45px;
+    right: 4%;
+    bottom: 4%;
+  }
+
   /* hero-banner */
   .carousel-container {
     padding-top: 70%;
@@ -1076,5 +1098,12 @@ footer {
     background-image: url("../img/footer_xs.svg");
     background-size: 375px auto;
     padding-top: 85px;
+  }
+
+  .top-btn {
+    width: 40px;
+    height: 40px;
+    right: 3%;
+    bottom: 3%;
   }
 }
