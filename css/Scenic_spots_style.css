@@ -719,8 +719,8 @@ footer {
 
   /* 回到頁首按鈕 */
   .top-btn {
-    width: 80px;
-    height: 80px;
+    width: 85px;
+    height: 85px;
   }
 
   /* .hero-banner */
@@ -837,14 +837,6 @@ footer {
 
   header.menu-active .bar3 {
     transform: rotate(45deg) translate(-9px, -3px);
-  }
-
-  /* 回到頁首按鈕 */
-  .top-btn {
-    width: 60px;
-    height: 60px;
-    right: 5%;
-    bottom: 5%;
   }
 
   /* hero-banner */
@@ -1001,8 +993,8 @@ footer {
 
   /* 回到頁首按鈕 */
   .top-btn {
-    width: 45px;
-    height: 45px;
+    width: 70px;
+    height: 70px;
     right: 4%;
     bottom: 4%;
   }
@@ -1101,8 +1093,8 @@ footer {
   }
 
   .top-btn {
-    width: 40px;
-    height: 40px;
+    width: 65px;
+    height: 65px;
     right: 3%;
     bottom: 3%;
   }
