@@ -175,7 +175,7 @@ header {
   transform: scale(1.15);
 }
 
-/* 漢堡選單基本樣式 */
+/* 漢堡選單 */
 .hamburger-menu {
   display: none;
   cursor: pointer;
@@ -191,6 +191,10 @@ header {
   margin: 6px 0;
   border-radius: 2px;
   transition: 0.4s;
+}
+
+header.menu-active .nav-menu {
+  border-top: 1px solid rgba(0, 0, 0, 0.2);
 }
 
 /* hero-banner */
@@ -463,17 +467,17 @@ header {
 
 /* 山道景點搜尋結果/卡片區 */
 .cards_area {
-  width: 1000px;
-  margin: 50px auto;
-  padding: 0 15px;
-  padding-bottom: 300px;
+  max-width: 1000px;
+  margin: 3rem auto;
+  padding: 0 1rem;
+  padding-bottom: 19rem;
 }
 
 .cards_list {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 50px 24px;
-  justify-content: flex-start;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, 238px);
+  gap: 3rem 1rem;
+  justify-content: center;
 }
 
 .share-card {
@@ -676,6 +680,23 @@ footer {
     width: 80%;
   }
 
+  /* 回到頁首按鈕 */
+  .top-btn {
+    width: 85px;
+    height: 85px;
+  }
+
+  /* hero banner */
+  .hero-content h1 {
+    font-size: 48px;
+    margin-bottom: 20px;
+  }
+
+  .share-btn {
+    font-size: 16px;
+    padding: 10px 25px;
+  }
+
   /* page btn area */
   .btn_wrapper {
     width: 45%;
@@ -784,6 +805,22 @@ footer {
 
   header.menu-active .bar3 {
     transform: rotate(45deg) translate(-9px, -3px);
+  }
+
+  /* hero banner */
+  .carousel-container {
+    padding-top: 60%;
+  }
+
+  .hero-content h1 {
+    font-size: 36px;
+    margin-bottom: 16px;
+  }
+
+  .share-btn {
+    font-size: 14px;
+    padding: 8px 20px;
+    border-width: 1.5px;
   }
 
   /* h2 area*/
@@ -908,13 +945,41 @@ footer {
     transform: rotate(45deg) translate(-7px, -3px);
   }
 
+  /* 回到頁首按鈕 */
+  .top-btn {
+    width: 70px;
+    height: 70px;
+    right: 4%;
+    bottom: 4%;
+  }
+
+  /* hero banner */
+  .carousel-container {
+    padding-top: 70%;
+  }
+
+  .hero-content h1 {
+    font-size: 28px;
+    margin-bottom: 12px;
+  }
+
+  .share-btn {
+    font-size: 12px;
+    padding: 6px 15px;
+    border-width: 1px;
+  }
+
+  .share-btn i {
+    margin-left: 4px;
+  }
+
   /* h2 area*/
   .scenic_spots {
-    padding-top: 24px;
+    padding-top: 32px;
   }
 
   .scenic_spots h2 {
-    margin-bottom: 10px;
+    margin-bottom: 20px;
   }
 
   h2 {
@@ -939,6 +1004,21 @@ footer {
 }
 
 @media screen and (max-width: 375px) {
+  /* 回到頂端按鈕 */
+  .top-btn {
+    width: 65px;
+    height: 65px;
+    right: 3%;
+    bottom: 3%;
+  }
+
+  /* hero banner */
+  .hero-content h1 {
+    font-size: 24px;
+    margin-bottom: 10px;
+  }
+
+  /* footer */
   .footer_bg {
     background-image: url("../img/footer_xs.svg");
     background-size: 375px auto;

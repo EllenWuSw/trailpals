@@ -1053,6 +1053,7 @@ footer {
   }
 }
 
+/* 漢堡選單 */
 .hamburger-menu {
   display: none;
   position: relative;
@@ -1067,6 +1068,10 @@ footer {
   margin: 6px 0;
   border-radius: 2px;
   transition: 0.4s;
+}
+
+header.menu-active .nav-menu {
+  border-top: 1px solid rgba(0, 0, 0, 0.2);
 }
 
 @media screen and (max-width: 820px) {

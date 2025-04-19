@@ -192,6 +192,10 @@ header {
   transition: 0.4s;
 }
 
+header.menu-active .nav-menu {
+  border-top: 1px solid rgba(0, 0, 0, 0.2);
+}
+
 /* hero-banner */
 .hero-banner {
   width: 100%;
@@ -1092,6 +1096,7 @@ footer {
     padding-top: 85px;
   }
 
+  /* 回到頂端按鈕 */
   .top-btn {
     width: 65px;
     height: 65px;
