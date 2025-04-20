@@ -18,32 +18,29 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
     <script>
       $(function () {
+        // 漢堡選單
         $(".hamburger-menu").click(function () {
           $("header").toggleClass("menu-active");
         });
+        // 揪團中卡片區輪播器
         if ($(window).width() <= 440) {
           const $cardsContainer = $(".cards-container");
           const $navigationDots = $(".card-dot");
           const $cards = $(".event-card");
 
-          // 初始化
           let currentIndex = 0;
           updateActiveDot(currentIndex);
 
-          // 監聽卡片容器滾動事件
           $cardsContainer.on("scroll", function () {
-            // 計算當前滾動位置對應的卡片索引
             const scrollPosition = $cardsContainer.scrollLeft();
-            const cardWidth = $cards.first().outerWidth(true); // 包含邊距的總寬度
+            const cardWidth = $cards.first().outerWidth(true);
             currentIndex = Math.round(scrollPosition / cardWidth);
 
-            // 確保索引在有效範圍內
             currentIndex = Math.max(
               0,
               Math.min(currentIndex, $navigationDots.length - 1)
             );
 
-            // 更新導航點狀態
             updateActiveDot(currentIndex);
           });
 
@@ -58,12 +55,10 @@
                 300
               );
 
-              // 更新導航點狀態
               updateActiveDot(index);
             });
           });
 
-          // 更新導航點激活狀態
           function updateActiveDot(activeIndex) {
             $navigationDots.each(function (index) {
               if (index === activeIndex) {
@@ -74,14 +69,12 @@
             });
           }
 
-          // 視窗調整大小時重新檢查
+          // 視窗調整大小時重新偵測器
           $(window).on("resize", function () {
             if ($(window).width() > 440) {
-              // 如果視窗變大，移除滾動事件監聽器
               $cardsContainer.off("scroll");
               $navigationDots.off("click");
             } else {
-              // 重新初始化位置
               currentIndex = 0;
               updateActiveDot(currentIndex);
               $cardsContainer.scrollLeft(0);
@@ -716,9 +709,7 @@
       <!-- 分享區 -->
       <div class="wrapper share-area">
         <section class="share-block section-padding">
-          <h2 class="mb-50">
-            <span style="color: #44513c">TrailPals </span>Share
-          </h2>
+          <h2><span style="color: #44513c">TrailPals </span>Share</h2>
           <div class="share-carousel">
             <button class="share-nav-button prev-button">
               <i class="bi bi-arrow-left-circle-fill"></i>

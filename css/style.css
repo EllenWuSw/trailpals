@@ -43,6 +43,7 @@ h2 {
   color: black;
   font-weight: bold;
   text-align: center;
+  margin-bottom: 20px;
 }
 
 h3 {
@@ -514,9 +515,6 @@ header {
   margin-top: 90px;
   margin-bottom: 90px;
 }
-.site_features h2 {
-  margin-bottom: 25px;
-}
 
 .site_features ul.dp-flex {
   justify-content: center;
@@ -845,23 +843,24 @@ header {
 .share-carousel {
   position: relative;
   width: 100%;
-  overflow: visible;
+  overflow: hidden;
 }
 
 .share-cards-list {
   display: flex;
   gap: 20px;
   padding: 10px 0;
-  justify-content: center;
+  justify-content: flex-start; /* 改為靠左對齊，便於控制輪播 */
   list-style: none;
   margin: 0 auto;
-  width: fit-content;
+  width: max-content; /* 確保容器寬度能容納所有卡片 */
+  transition: transform 0.3s ease; /* 添加平滑過渡效果 */
 }
 
 /* share卡片樣式 */
-
 .share-card {
   width: 221px;
+  flex-shrink: 0;
   border: 1px solid #c0d0b5;
   border-radius: 3px;
   padding: 9px;
@@ -979,11 +978,11 @@ header {
 }
 
 .prev-button {
-  left: -5px;
+  left: 0;
 }
 
 .next-button {
-  right: -5px;
+  right: 0;
 }
 
 .carousel-indicators {
@@ -1041,7 +1040,11 @@ footer {
 }
 
 /* RWD */
-
+@media screen and (max-width: 1200px) {
+  .share-nav-button {
+    display: none;
+  }
+}
 @media screen and (max-width: 1100px) {
   /* 通用設定 */
   .wrapper {
@@ -1314,6 +1317,7 @@ footer {
   .site_features li {
     width: calc(45% - 4px);
   }
+
   /* footer */
   .footer_bg {
     width: 100%;
@@ -1333,7 +1337,7 @@ footer {
 }
 
 @media screen and (max-width: 750px) {
-  /* 網站特點 */
+  /* 只針對網站特點區域做的斷點 */
   .call_action_block {
     flex-direction: column;
   }
@@ -1344,7 +1348,7 @@ footer {
   }
 }
 @media screen and (max-width: 600px) {
-  /* 主要針對主視覺縮太小的問題做一個斷點 */
+  /* 只針對主視覺縮太小的問題做一個斷點 */
   h1 {
     font-size: 36px;
   }
@@ -1492,7 +1496,6 @@ footer {
     display: none;
   }
 
-  /* 卡片固定寬度，不壓縮 */
   .event-card {
     flex: 0 0 auto;
     width: 280px;
