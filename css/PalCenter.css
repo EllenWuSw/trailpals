@@ -159,9 +159,31 @@ header {
 .user_actions li a:hover {
   transform: scale(1.15);
 }
-/* 山友中心 */
+
+/* 漢堡選單 */
+.hamburger-menu {
+  display: none;
+  position: relative;
+  z-index: 100;
+  cursor: pointer;
+}
+
+.hamburger-menu .bar {
+  width: 30px;
+  height: 3px;
+  background-color: #44513c;
+  margin: 6px 0;
+  border-radius: 2px;
+  transition: 0.4s;
+}
+
+header.menu-active .nav-menu {
+  border-top: 1px solid rgba(0, 0, 0, 0.2);
+}
+
+/* 山友中心標題 */
 .palsCenter {
-  padding-bottom: 300px;
+  padding-bottom: 380px;
 }
 .wrapper h2 {
   margin-top: 90px;
@@ -174,7 +196,6 @@ header {
   background-color: white;
   border-radius: 9px;
   padding: 48px 50px;
-  /* 需要再調整  */
 }
 .head-area {
   text-align: center;
@@ -311,7 +332,7 @@ header {
 
 .info-item:nth-last-child(1),
 .info-item:nth-last-child(2) {
-  margin-bottom: 0;
+  margin-bottom: 20px;
 }
 
 .info-label {
@@ -351,7 +372,7 @@ form {
 }
 
 .form-input {
-  width: 100%;
+  width: 99%;
   padding: 12px;
   border: 1px solid #ddd;
   border-radius: 4px;
@@ -378,8 +399,6 @@ textarea {
   min-height: 100px;
   font-family: inherit;
   font-size: 16px;
-
-  /* ??????? */
 }
 
 /* 按鈕樣式 */
@@ -445,34 +464,7 @@ footer {
   color: #ffffff;
 }
 
-/* footer */
-footer {
-  margin: 0 auto;
-  position: relative;
-  margin-top: -378px;
-}
-
-.footer_bg {
-  width: 100%;
-  background-image: url("../img/footer1440.svg");
-  background-repeat: no-repeat;
-  background-position: center bottom;
-  background-size: 1440px auto;
-  padding-top: 300px;
-  min-height: 200px;
-}
-
-.footer_content {
-  align-items: center;
-  padding-top: 25px;
-  text-align: end;
-}
-.footer_content p {
-  color: #ffffff;
-}
-
 /* RWD */
-
 @media screen and (max-width: 1100px) {
   /* header */
   .logo a img {
@@ -503,26 +495,15 @@ footer {
     width: 80%;
   }
 }
-
-/* 漢堡選單 */
-.hamburger-menu {
-  display: none;
-  position: relative;
-  z-index: 100;
-  cursor: pointer;
-}
-
-.hamburger-menu .bar {
-  width: 30px;
-  height: 3px;
-  background-color: #44513c;
-  margin: 6px 0;
-  border-radius: 2px;
-  transition: 0.4s;
-}
-
-header.menu-active .nav-menu {
-  border-top: 1px solid rgba(0, 0, 0, 0.2);
+@media screen and (max-width: 1030px) {
+  /* 左側會員導覽列 */
+  .user_link_btn a {
+    font-size: 16px;
+    padding: 12px 24px;
+  }
+  .user_nav {
+    padding: 36px 30px;
+  }
 }
 
 @media screen and (max-width: 820px) {
@@ -614,12 +595,78 @@ header.menu-active .nav-menu {
     transform: rotate(45deg) translate(-9px, -3px);
   }
 
+  /* 會員中心內容(左右側變成上下) */
+  .memberManagementArea {
+    flex-direction: column;
+    gap: 24px;
+    align-items: center;
+  }
+
+  /* 調整左側導航寬度 */
+  .user_nav {
+    width: 100%;
+    padding: 36px;
+  }
+
+  /* 調整頭像區域 */
+  .head-area {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    justify-content: center;
+    gap: 16px;
+    text-align: left;
+    margin-bottom: 24px;
+  }
+
+  .head-area p {
+    margin-top: 0;
+    margin-bottom: 0;
+  }
+
+  .quck_link {
+    flex-direction: row;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 12px;
+    height: auto;
+  }
+
+  .user_link_btn {
+    /* 使按鈕寬度適合內容 */
+    flex: 0 1 auto;
+  }
+
+  .user_link_btn a {
+    white-space: nowrap;
+    padding: 12px 16px;
+  }
+
+  .user_link_btn_logout {
+    margin-top: 0;
+  }
+
+  /* 調整右側內容寬度 */
+  .user_content {
+    width: 90%;
+    padding: 36px;
+  }
+
+  /* 調整個人資訊區塊 */
+  .info-box {
+    flex-direction: column;
+  }
+  .info-item {
+    width: 100%;
+    margin-right: 0;
+  }
+
   /* footer */
   .footer_bg {
     width: 100%;
     background-image: url("../img/footer_m.svg");
     background-size: 820px auto;
-    padding-top: 200px;
+    padding-top: 270px;
     min-height: 200px;
   }
   .footer_content {
@@ -632,12 +679,8 @@ header.menu-active .nav-menu {
   }
 }
 
-/* palsCenter  */
-.palsCenter {
-  padding-bottom: 380px;
-}
-
 @media screen and (max-width: 440px) {
+  /* header */
   header {
     padding-top: 4px;
     padding-bottom: 4px;
@@ -668,6 +711,74 @@ header.menu-active .nav-menu {
 
   header.menu-active .bar3 {
     transform: rotate(45deg) translate(-7px, -3px);
+  }
+
+  /* 會員中心內容 */
+  .wrapper h2 {
+    margin-top: 40px;
+    margin-bottom: 24px;
+    font-size: 28px;
+  }
+
+  .palsCenter {
+    padding-bottom: 280px;
+  }
+
+  .user_content h3 {
+    font-size: 22px;
+    margin-bottom: 36px;
+  }
+
+  .head-area {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 20%;
+  }
+
+  .head-area img {
+    width: 60px;
+    height: 60px;
+  }
+
+  .user_link_btn_logout {
+    position: absolute;
+    right: 45px;
+    top: 160px;
+  }
+
+  .user_link_btn_logout a {
+    padding: 8px 12px;
+    font-size: 16px;
+  }
+
+  .quck_link {
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    padding-bottom: 12px;
+    justify-content: flex-start;
+  }
+
+  .user_link_btn a {
+    padding: 8px 12px;
+    font-size: 14px;
+    white-space: nowrap;
+  }
+
+  .user_content,
+  .user_nav {
+    padding: 24px;
+  }
+
+  .form-input,
+  textarea,
+  .user_nav {
+    padding: 10px;
+    width: 90%;
+  }
+
+  .btn {
+    padding: 10px 16px;
   }
 }
 
