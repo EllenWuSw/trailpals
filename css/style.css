@@ -69,10 +69,6 @@ h4 {
 }
 
 /* 水平間距 */
-.mb-50 {
-  margin-bottom: 50px;
-}
-
 .mb-30 {
   margin-bottom: 30px;
 }
@@ -132,8 +128,28 @@ svg.top-btn:hover rect {
   fill: #5d4f44;
 }
 
-/* header */
+/* 漢堡選單 */
+.hamburger-menu {
+  display: none;
+  position: relative;
+  z-index: 100;
+  cursor: pointer;
+}
 
+.hamburger-menu .bar {
+  width: 30px;
+  height: 3px;
+  background-color: #44513c;
+  margin: 6px 0;
+  border-radius: 2px;
+  transition: 0.4s;
+}
+
+header.menu-active .nav-menu {
+  border-top: 1px solid rgba(0, 0, 0, 0.2);
+}
+
+/* header */
 header {
   align-items: center;
   padding-top: 12px;
@@ -211,7 +227,7 @@ header {
   background-repeat: no-repeat;
   background-position: center center;
   background-size: cover;
-  padding-top: 46.94%;
+  padding-top: 55%;
 }
 
 .hero-banner::before {
@@ -267,14 +283,12 @@ header {
   align-items: center;
 
   cursor: pointer;
-  /* 放個可點選的示意，增加使用者使用的方便性 */
 }
 
 .search-submit:hover {
   color: #5d4f44;
 }
 
-/* 製作游標移入的放大效果提示將進入搜尋 */
 .search-submit i {
   transition: transform 0.3s;
 }
@@ -449,11 +463,16 @@ header {
   color: white;
   text-align: center;
   padding: 12px;
+  margin-top: 36px;
   border: none;
   border-radius: 4px;
   font-size: 16px;
   font-weight: bold;
   cursor: pointer;
+}
+
+.mobile-see-more {
+  display: none;
 }
 
 /* 痛點分析區塊 */
@@ -495,6 +514,9 @@ header {
   margin-top: 90px;
   margin-bottom: 90px;
 }
+.site_features h2 {
+  margin-bottom: 25px;
+}
 
 .site_features ul.dp-flex {
   justify-content: center;
@@ -517,8 +539,6 @@ header {
 .site_features img {
   display: block;
 }
-
-/* 網站特點 */
 
 .call_action_block {
   display: flex;
@@ -972,7 +992,7 @@ header {
   align-items: center;
   margin: 20px 0 0;
   padding: 0;
-  position: relative; /* 確保不會影響其他元素 */
+  position: relative;
   z-index: 1;
 }
 
@@ -1023,6 +1043,20 @@ footer {
 /* RWD */
 
 @media screen and (max-width: 1100px) {
+  /* 通用設定 */
+  .wrapper {
+    width: 90%;
+  }
+
+  .section-padding {
+    padding-top: 80px;
+    padding-bottom: 80px;
+  }
+
+  h1 {
+    font-size: 56px;
+  }
+
   /* header */
   .logo a img {
     opacity: 0;
@@ -1051,30 +1085,122 @@ footer {
   .user_actions img {
     width: 80%;
   }
-}
 
-/* 漢堡選單 */
-.hamburger-menu {
-  display: none;
-  position: relative;
-  z-index: 100;
-  cursor: pointer;
-}
+  /* 回到頁首按鈕 */
+  .top-btn {
+    width: 85px;
+    height: 85px;
+  }
 
-.hamburger-menu .bar {
-  width: 30px;
-  height: 3px;
-  background-color: #44513c;
-  margin: 6px 0;
-  border-radius: 2px;
-  transition: 0.4s;
-}
+  /* 主視覺 */
+  .hero-banner {
+    padding-top: 120%;
+  }
 
-header.menu-active .nav-menu {
-  border-top: 1px solid rgba(0, 0, 0, 0.2);
+  .hero-content {
+    width: 85%;
+  }
+
+  .search-form {
+    width: 90%;
+    max-width: 480px;
+    height: 60px;
+  }
+
+  .search-input::placeholder {
+    font-size: 18px;
+  }
+
+  .search-submit {
+    font-size: 22px;
+    padding: 18px 20px;
+  }
+
+  .search-tagList {
+    font-size: 18px;
+    gap: 10px;
+  }
+
+  .search-tagList li {
+    padding: 7px 20px;
+  }
+
+  /* 網站特點 */
+  .site_features li {
+    width: calc(33% - 4px);
+  }
 }
 
 @media screen and (max-width: 820px) {
+  /* 通用設定 */
+  h1 {
+    font-size: 48px;
+  }
+
+  h2 {
+    font-size: 32px;
+  }
+
+  h3 {
+    font-size: 22px;
+  }
+
+  h4 {
+    font-size: 18px;
+  }
+
+  .section-padding {
+    padding-top: 70px;
+    padding-bottom: 70px;
+  }
+
+  .mb-50 {
+    margin-bottom: 40px;
+  }
+
+  /* 主視覺 */
+  .hero-banner {
+    padding-top: 110%;
+    background-position: center 20%;
+  }
+
+  .search-container {
+    margin-top: 25px;
+    margin-bottom: 25px;
+  }
+
+  .search-form {
+    height: 50px;
+    padding: 0 15px;
+    max-width: 440px;
+  }
+
+  .search-submit {
+    font-size: 20px;
+    padding: 15px;
+    width: 40px;
+  }
+
+  .search-input {
+    line-height: 50px;
+  }
+
+  .search-input::placeholder {
+    font-size: 16px;
+  }
+
+  .search-tagList {
+    font-size: 16px;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 8px;
+  }
+
+  .search-tagList li {
+    padding: 6px 16px;
+    line-height: 20px;
+  }
+
   /* header */
   .hamburger-menu {
     display: block;
@@ -1163,6 +1289,31 @@ header.menu-active .nav-menu {
     transform: rotate(45deg) translate(-9px, -3px);
   }
 
+  /* 痛點分析區塊 */
+  .pain_cards_list.dp-flex {
+    flex-direction: column;
+    align-items: center;
+    gap: 25px;
+  }
+
+  .pain_cards_list li {
+    width: 75%;
+    margin-bottom: 10px;
+  }
+
+  .painPoint_block h2 {
+    font-size: 32px;
+    padding: 0 15px;
+  }
+
+  /* 網站特點 */
+  .site_features {
+    margin-top: 45px;
+    margin-top: 45px;
+  }
+  .site_features li {
+    width: calc(45% - 4px);
+  }
   /* footer */
   .footer_bg {
     width: 100%;
@@ -1181,7 +1332,110 @@ header.menu-active .nav-menu {
   }
 }
 
+@media screen and (max-width: 750px) {
+  /* 網站特點 */
+  .call_action_block {
+    flex-direction: column;
+  }
+
+  .call_action_block p {
+    margin-bottom: 1.5rem;
+    line-height: 1.5;
+  }
+}
+@media screen and (max-width: 600px) {
+  /* 主要針對主視覺縮太小的問題做一個斷點 */
+  h1 {
+    font-size: 36px;
+  }
+
+  .hero-banner {
+    padding-top: 100%;
+    background-position: center 25%;
+  }
+
+  .hero-content {
+    width: 90%;
+  }
+
+  h1 {
+    font-size: 36px;
+  }
+
+  .search-container {
+    margin-top: 20px;
+    margin-bottom: 20px;
+  }
+
+  .search-form {
+    width: 95%;
+    height: 44px;
+    padding: 0 10px;
+  }
+
+  .search-submit {
+    font-size: 18px;
+    padding: 12px 10px;
+    width: 36px;
+  }
+
+  .search-input {
+    line-height: 44px;
+    font-size: 14px;
+  }
+
+  .search-input::placeholder {
+    font-size: 14px;
+  }
+
+  .search-tagList {
+    font-size: 14px;
+    gap: 6px;
+    margin-top: 12px;
+  }
+
+  .search-tagList li {
+    padding: 5px 12px;
+    line-height: 18px;
+  }
+}
+
 @media screen and (max-width: 440px) {
+  /* 通用設定 */
+  h2 {
+    font-size: 28px;
+  }
+
+  h3 {
+    font-size: 20px;
+  }
+
+  h4 {
+    font-size: 16px;
+  }
+
+  .wrapper {
+    padding: 0 10px;
+  }
+
+  .section-padding {
+    padding-top: 50px;
+    padding-bottom: 50px;
+  }
+
+  .mb-50 {
+    margin-bottom: 30px;
+  }
+
+  .mb-30 {
+    margin-bottom: 20px;
+  }
+
+  .mb-16 {
+    margin-bottom: 12px;
+  }
+
+  /* header */
   header {
     padding-top: 4px;
     padding-bottom: 4px;
@@ -1213,11 +1467,228 @@ header.menu-active .nav-menu {
   header.menu-active .bar3 {
     transform: rotate(45deg) translate(-7px, -3px);
   }
+
+  /* 回到頁首按鈕 */
+  .top-btn {
+    width: 70px;
+    height: 70px;
+    right: 4%;
+    bottom: 4%;
+  }
+
+  /* 揪團卡片區 */
+  .cards-container {
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    margin: 0 40px;
+    scroll-behavior: smooth;
+    -webkit-overflow-scrolling: touch;
+    justify-content: flex-start;
+    scrollbar-width: none;
+  }
+
+  .cards-container::-webkit-scrollbar {
+    display: none;
+  }
+
+  /* 卡片固定寬度，不壓縮 */
+  .event-card {
+    flex: 0 0 auto;
+    width: 280px;
+    margin: 0 10px;
+    scroll-snap-align: start;
+  }
+
+  .mb-50.mt-50 {
+    margin-top: 20px;
+    margin-bottom: 20px;
+  }
+
+  .card-navigation-dots {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+    margin-bottom: 20px;
+  }
+
+  .card-dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background-color: #ddd;
+    margin: 0 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+
+  .card-dot.active {
+    background-color: #44513c;
+  }
+
+  .mobile-see-more {
+    display: flex;
+    justify-content: center;
+    margin-top: 10px;
+  }
+
+  .mobile-see-more-btn {
+    display: flex;
+    align-items: center;
+    padding: 10px 16px;
+    background-color: white;
+    color: #44513c;
+    border: 2px solid #44513c;
+    border-radius: 4px;
+    font-weight: bold;
+    font-size: 14px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+  }
+
+  .mobile-see-more-btn:hover {
+    background-color: #44513c;
+    color: white;
+  }
+
+  .mobile-see-more-btn i {
+    margin-left: 8px;
+  }
+
+  .groupCards_seeMore_btn {
+    display: none;
+  }
+
+  /* 痛點分析區塊 */
+  .painPoint_block h2 {
+    font-size: 28px;
+  }
+
+  .pain_questions {
+    font-size: 18px;
+    margin-bottom: 20px;
+  }
+
+  .pain_cards_list li {
+    width: 85%;
+    padding: 20px 15px;
+  }
+
+  /* 網站特點區塊 */
+  .site_features ul.dp-flex {
+    flex-direction: column;
+    align-items: center;
+    gap: 16px;
+  }
+
+  .site_features li {
+    width: 85%;
+    max-width: 320px;
+    padding: 20px 15px;
+  }
+
+  .site_features h4 {
+    font-size: 18px;
+    margin-bottom: 12px;
+  }
 }
 
 @media screen and (max-width: 375px) {
+  /* 通用設定 */
+  h1 {
+    font-size: 32px;
+  }
+
+  h2 {
+    font-size: 24px;
+  }
+
+  .wrapper {
+    width: 95%;
+    padding: 0 8px;
+  }
+
+  .section-padding {
+    padding-top: 40px;
+    padding-bottom: 40px;
+  }
+
+  /* 主視覺 */
+  .hero-banner {
+    padding-top: 170%;
+    background-position: center 25%;
+  }
+
+  .search-container {
+    margin-top: 15px;
+    margin-bottom: 15px;
+  }
+
+  .search-form {
+    height: 40px;
+  }
+
+  .search-submit {
+    font-size: 16px;
+    padding: 10px 8px;
+    width: 32px;
+  }
+
+  .search-input {
+    line-height: 40px;
+  }
+
+  .search-input::placeholder {
+    font-size: 13px;
+    font-weight: 600;
+  }
+
+  .search-tagList {
+    font-size: 13px;
+    gap: 5px;
+  }
+
+  .search-tagList li {
+    padding: 4px 10px;
+    line-height: 16px;
+  }
+
+  /* 痛點分析區塊 */
+  .painPoint_block h2 {
+    font-size: 24px;
+  }
+
+  .pain_cards_list li {
+    width: 90%;
+    padding: 15px 10px;
+  }
+
+  .pain_cards_list h4 {
+    font-size: 20px;
+  }
+
+  /* 網站特點區塊 */
+  .site_features li {
+    width: 70%;
+    padding: 15px 10px;
+  }
+
+  .site_features h4 {
+    font-size: 20px;
+    margin-top: 15px;
+  }
+
+  /* footer */
   .footer_bg {
     background-image: url("../img/footer_xs.svg");
     background-size: 375px auto;
+  }
+
+  /* 回到頂端按鈕 */
+  .top-btn {
+    width: 65px;
+    height: 65px;
+    right: 3%;
+    bottom: 3%;
   }
 }

@@ -21,6 +21,73 @@
         $(".hamburger-menu").click(function () {
           $("header").toggleClass("menu-active");
         });
+        if ($(window).width() <= 440) {
+          const $cardsContainer = $(".cards-container");
+          const $navigationDots = $(".card-dot");
+          const $cards = $(".event-card");
+
+          // 初始化
+          let currentIndex = 0;
+          updateActiveDot(currentIndex);
+
+          // 監聽卡片容器滾動事件
+          $cardsContainer.on("scroll", function () {
+            // 計算當前滾動位置對應的卡片索引
+            const scrollPosition = $cardsContainer.scrollLeft();
+            const cardWidth = $cards.first().outerWidth(true); // 包含邊距的總寬度
+            currentIndex = Math.round(scrollPosition / cardWidth);
+
+            // 確保索引在有效範圍內
+            currentIndex = Math.max(
+              0,
+              Math.min(currentIndex, $navigationDots.length - 1)
+            );
+
+            // 更新導航點狀態
+            updateActiveDot(currentIndex);
+          });
+
+          // 點擊導航點跳到對應卡片
+          $navigationDots.each(function (index) {
+            $(this).on("click", function () {
+              const cardWidth = $cards.first().outerWidth(true);
+              $cardsContainer.animate(
+                {
+                  scrollLeft: index * cardWidth,
+                },
+                300
+              );
+
+              // 更新導航點狀態
+              updateActiveDot(index);
+            });
+          });
+
+          // 更新導航點激活狀態
+          function updateActiveDot(activeIndex) {
+            $navigationDots.each(function (index) {
+              if (index === activeIndex) {
+                $(this).addClass("active");
+              } else {
+                $(this).removeClass("active");
+              }
+            });
+          }
+
+          // 視窗調整大小時重新檢查
+          $(window).on("resize", function () {
+            if ($(window).width() > 440) {
+              // 如果視窗變大，移除滾動事件監聽器
+              $cardsContainer.off("scroll");
+              $navigationDots.off("click");
+            } else {
+              // 重新初始化位置
+              currentIndex = 0;
+              updateActiveDot(currentIndex);
+              $cardsContainer.scrollLeft(0);
+            }
+          });
+        }
       });
     </script>
     <title>TrailPals 山野同行</title>
@@ -398,6 +465,17 @@
             </div>
           </li>
         </ul>
+        <div class="card-navigation-dots">
+          <div class="card-dot active"></div>
+          <div class="card-dot"></div>
+          <div class="card-dot"></div>
+          <div class="card-dot"></div>
+        </div>
+        <div class="mobile-see-more">
+          <a href="#" class="mobile-see-more-btn">
+            查看更多 <i class="bi bi-arrow-right"></i>
+          </a>
+        </div>
         <button class="groupCards_seeMore_btn">查看更多</button>
       </section>
 
@@ -419,9 +497,7 @@
           <li>
             <img src="./img/pain3.svg" alt="nofrieds" />
             <h4 class="mb-16">沒有圖文簡約的社群</h4>
-            <p>
-              市面上社群資料成列方式不佳，<br />本站提供簡約圖文的社群空間。
-            </p>
+            <p>市面上社群資料成列方式不佳，<br />過多的資料讓人資訊過載。</p>
           </li>
         </ul>
       </section>
